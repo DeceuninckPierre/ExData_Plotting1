@@ -1,7 +1,11 @@
 ## plot4.R
 ## This file creates the plot4.png file requested by the peer graded assignement
+
+# sets graphical parameters
 dev.off()
 par(bg=NA)
+par(mfrow = c(2, 2)) 
+
 ## Downloads and unzip the dataset 
 if(!file.exists("household_power_consumption.txt")){
         fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
@@ -25,7 +29,6 @@ HPC <- cbind(datetime,HPC[,3:9])
 HPC[,2:8] <- as.numeric(unlist(HPC[,2:8]))
 
 ## plot the plot4 figure and copy it to plot4.png file
-par(mfrow = c(2, 2)) 
 with(HPC, {
         plot(datetime,Global_active_power,type="l",ylab = "Global Active Power",main = "",xlab = "")
         

@@ -1,7 +1,10 @@
 ## plot3.R
 ## This file creates the plot3.png file requested by the peer graded assignement
+
+# sets graphical parameters
 dev.off()
 par(bg=NA)
+
 ## Downloads and unzip the dataset 
 if(!file.exists("household_power_consumption.txt")){
         fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
